@@ -1,0 +1,36 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Launch backend",
+      "type": "shell",
+      "command": "iex -S mix phx.server",
+      "windows": {
+        "command": "iex --werl -S mix phx.server"
+      },
+      "problemMatcher": [
+        "$mixCompileError",
+        "$mixCompileWarning",
+        "$mixTestFailure"
+      ],
+      "options": {
+        "env": {
+          "ELIXIR_PHOENIX_PORT": "4016"
+        }
+      }
+    },
+
+    {
+      "label": "mix test ${file}",
+      "type": "shell",
+      "command": "mix test ${file}",
+      "problemMatcher": [
+        "$mixCompileError",
+        "$mixCompileWarning",
+        "$mixTestFailure"
+      ]
+    }
+  ]
+}
